@@ -1,0 +1,13 @@
+services:
+- docker
+  
+jobs:
+  include:
+    
+    - name: Build and deploy docker image
+      script:
+        - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+        - docker build -t claranet/jenkins-jnlp-slave:latest .
+        - docker tag claranet/jenkins-jnlp-slave:latest claranet/jenkins-jnlp-slave:$TRAVIS_BRANCH
+        - docker push claranet/jenkins-jnlp-slave:latest
+        - docker push claranet/jenkins-jnlp-slave:$TRAVIS_BRANCH
