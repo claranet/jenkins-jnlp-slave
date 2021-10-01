@@ -1,4 +1,4 @@
-FROM jenkinsci/jnlp-slave:3.35-2-jdk11
+FROM jenkins/jnlp-slave:4.9-1-jdk11
 MAINTAINER Domenico Caruso
 
 ENV DOCKER_VERSION=17.04.0-ce DOCKER_COMPOSE_VERSION=1.14.0
