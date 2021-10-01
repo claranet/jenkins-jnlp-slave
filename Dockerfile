@@ -5,7 +5,7 @@ ENV DOCKER_VERSION=17.04.0-ce DOCKER_COMPOSE_VERSION=1.14.0
 
 USER root
 RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends \
-    make python=2.7.16-1 python=3.7.3-1\
+    make python=2.7.16-1 python3=3.7.3-1\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
